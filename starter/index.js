@@ -107,6 +107,20 @@ var finances = [
   var averageChange = totalChange / (finances.length -1);
 
   // Greatest increase in Profit/Losses
+  
+  var greatestIncrease = 0; // initialize the variable to store the greatest increase
+  var dateWithGreatestIncrease = ''; // initialize the variable to store the date with the greatest increase
+  
+  for (var i = 1; i < finances.length; i++) {
+        var currentProfit = finances[i][1];
+        var previousProfit = finances[i - 1][1];
+        var increase = currentProfit - previousProfit;
+
+        if (increase > greatestIncrease) {
+            greatestIncrease = increase;
+            dateWithGreatestIncrease = finances[i][0];
+        }
+    }
 
   // Greatest decrease in Profit/Losses
 
