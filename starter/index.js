@@ -93,8 +93,18 @@ var finances = [
 
   // Total profit loss
 
+  var totalAmount = 0;
+  for (i = 0; i <totalMonths; i++) {
+    totalAmount = finances [i][1] + totalAmount;
+  }
+
   // AVerage changes in profit/ loss
 
   // Greatest increase in Profit/Losses
 
   // Greatest decrease in Profit/Losses
+
+  console.log ("Financial Analysis");
+  console.log ("---------------")
+  console.log ("Total months: " + totalMonths);
+  console.log ("Total: $" + totalAmount);
