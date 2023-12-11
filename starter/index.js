@@ -98,7 +98,13 @@ var finances = [
     totalAmount = finances [i][1] + totalAmount;
   }
 
-  // AVerage changes in profit/ loss
+  // Average changes in profit/ loss
+
+  var totalChange = 0;
+  for (i = 1; i < (totalMonths -1); i++) {
+    totalChange += (finances [i][1]-finances [i-1][1]);
+  }
+  var averageChange = totalChange / (finances.length -1);
 
   // Greatest increase in Profit/Losses
 
@@ -108,3 +114,7 @@ var finances = [
   console.log ("---------------")
   console.log ("Total months: " + totalMonths);
   console.log ("Total: $" + totalAmount);
+  console.log("Average Change: " + averageChange.toFixed(2));
+  console.log('Greatest increase in Profits/Losses is ' + dateWithGreatestIncrease + ' ($' + greatestIncrease + ')');
+  console.log('Greatest decresase in Profits/Losses is ' + decreaseMonth + ' ($' + maxDecrease + ')');
+
