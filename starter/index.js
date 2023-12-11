@@ -86,3 +86,15 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099],
   ];
+
+  // Total number of months
+
+  var totalMonths = finances.length
+
+  // Total profit loss
+
+  // AVerage changes in profit/ loss
+
+  // Greatest increase in Profit/Losses
+
+  // Greatest decrease in Profit/Losses
