@@ -101,17 +101,17 @@ var finances = [
   // Average changes in profit/ loss
 
   var totalChange = 0;
-  for (i = 1; i < (totalMonths -1); i++) {
-    totalChange += (finances [i][1]-finances [i-1][1]);
+  for (i = 1; i < totalMonths; i++) {
+    totalChange += (finances [i][1] - finances [i-1][1]);
   }
-  var averageChange = totalChange / (finances.length -1);
+  var averageChange = totalChange / (totalMonths -1);
 
   // Greatest increase in Profit/Losses
-  
-  var greatestIncrease = 0; // initialize the variable to store the greatest increase
-  var dateWithGreatestIncrease = ''; // initialize the variable to store the date with the greatest increase
-  
-  for (var i = 1; i < finances.length; i++) {
+
+  var greatestIncrease = 0; 
+  var dateWithGreatestIncrease = ''; 
+
+  for (var i = 1; i < totalMonths; i++) {
         var currentProfit = finances[i][1];
         var previousProfit = finances[i - 1][1];
         var increase = currentProfit - previousProfit;
@@ -123,6 +123,20 @@ var finances = [
     }
 
   // Greatest decrease in Profit/Losses
+
+  var maxDecrease = 0;
+  var decreaseMonth = '';
+
+  for (var i = 1; i < finances.length; i++) {
+        var currentProfit = finances[i][1];
+        var previousProfit = finances[i - 1][1];
+        var decrease = currentProfit - previousProfit;
+    
+        if (decrease < maxDecrease) {
+        maxDecrease = decrease;
+        decreaseMonth = finances[i][0];
+        }
+  }
 
   console.log ("Financial Analysis");
   console.log ("---------------")
